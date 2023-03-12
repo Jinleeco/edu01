@@ -1,0 +1,260 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.wrap {
+    position:relative;
+    width:100%;
+    height:1000px;
+    background-color: #ECE9D5;
+    overflow: hidden;
+}
+
+.slidein1 {
+    position: absolute;
+    top:0px;
+    -moz-animation: slidein1 2s ease-in 0s 1 normal both;
+    -webkit-animation: slidein1 2s ease-in 0s 1 normal both;
+    animation: slidein1 2s ease-in 0s 1 normal both;
+    /*name duration timing-function delay iteration-count direction fill-mode;*/
+  }
+  
+  @-moz-keyframes slidein1 {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+      margin-left:80%;
+      width:100%;
+    }
+  }
+  
+  @-webkit-keyframes slidein1 {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+     margin-left:80%;
+     width:100%;
+   }
+  }
+  
+  @keyframes slidein1 {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+     margin-left:80%;
+     width:100%;
+   }
+  }
+
+
+  .slidein2 {
+    position: absolute;
+    bottom:400px;
+    -moz-animation: slidein2 2s ease-in 0s 1 normal both;
+    -webkit-animation: slidein2 2s ease-in 0s 1 normal both;
+    animation: slidein2 2s ease-in 0s 1 normal both;
+    /*name duration timing-function delay iteration-count direction fill-mode;*/
+  }
+     
+  @-moz-keyframes slidein2 {
+    from {
+      margin-left:0%;
+      width:300%
+    }
+  
+    to {
+      margin-left:20%;
+      width:100%;
+    }
+  }
+  
+  @-webkit-keyframes slidein2 {
+    from {
+      margin-left:0%;
+      width:300%
+    }
+  
+    to {
+     margin-left:20%;
+     width:100%;
+   }
+  }
+  
+  @keyframes slidein2 {
+    from {
+      margin-left:0%;
+      width:300%
+    }
+  
+    to {
+     margin-left:20%;
+     width:100%;
+   }
+  }
+
+  .rotateY1{
+    position:absolute;
+    bottom:160px;
+    width:100%;
+    height:200px;
+  }
+
+  .rotateY1 img{   
+    animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    -moz-animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    -webkit-animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    /*name duration timing-function delay iteration-count direction fill-mode;*/
+  }
+
+  @-moz-keyframes frontRotateX {
+    100% {
+        transform: rotateX(540deg);
+    }
+  }
+
+  @-webkit-keyframes frontRotateX {
+    100% {
+        transform: rotateX(540deg);
+    }
+  }
+  
+  @keyframes frontRotateX {
+    100% {
+        transform: rotateX(540deg);
+    }
+  }
+
+  .rotateY2{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    height:200px;
+  }
+
+  .rotateY2 img{   
+    animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    -moz-animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    -webkit-animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+    /*name duration timing-function delay iteration-count direction fill-mode;*/
+  }
+
+
+
+  @-moz-keyframes backRotateX {
+    100% {
+        transform: rotateX(360deg)
+    }
+  }
+
+  @-webkit-keyframes backRotateX {
+    100% {
+        transform: rotateX(360deg)
+    }
+  }
+  
+  @keyframes backRotateX {
+    100% {
+        transform: rotateX(360deg)
+    }
+  }
+
+  .slidein3 {
+    position:absolute;
+    bottom:80px;
+    width:100%;
+    height:150px;
+    overflow: hidden;
+  }
+
+  .slidein3 img {
+    position: absolute;
+    animation: slidein3 2s ease-in 0s 1 normal both;
+    -moz-animation: slidein3 2s ease-in 0s 1 normal both;
+    -webkit-animation: slidein3 2s ease-in 0s 1 normal both;
+    /*name duration timing-function delay iteration-count direction fill-mode;*/
+  }
+     
+  @-moz-keyframes slidein3 {
+    from {
+      bottom:-150px;
+    }
+  
+    to {
+      bottom:0px;
+    }
+  }
+  
+  @-webkit-keyframes slidein3 {
+    from {
+      bottom:-150px;
+    }
+  
+    to {
+      bottom:0px;
+   }
+  }
+  
+  @keyframes slidein3 {
+    from {
+      bottom:-150px;
+    }
+  
+    to {
+      bottom:0px;
+   }
+  }
+
+
+
+  .slidein4 {
+    position:absolute;
+    bottom:160px;
+    width:100%;
+    height:200px;
+    overflow: hidden;
+    animation: slidein4 1s ease-in 0s 1 normal both;
+    -moz-animation: slidein4 1s ease-in 0s 1 normal both;
+    -webkit-animation: slidein4 1s ease-in 0s 1 normal both;
+  }
+
+  @-moz-keyframes slidein4 {
+    from {
+      bottom:0px;
+    }
+  
+    to {
+      bottom:160px;
+    }
+  }
+  
+  @-webkit-keyframes slidein4 {
+    from {
+      bottom:0px;
+    }
+  
+    to {
+      bottom:160px;
+   }
+  }
+  
+  @keyframes slidein4 {
+    from {
+      bottom:0px;
+    }
+  
+    to {
+      bottom:160px;
+   }
+  }
+
+  
