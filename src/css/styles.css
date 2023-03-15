@@ -14,9 +14,9 @@
 .slidein1 {
     position: absolute;
     top:0px;
-    -moz-animation: slidein1 2s ease-in 0s 1 normal both;
-    -webkit-animation: slidein1 2s ease-in 0s 1 normal both;
-    animation: slidein1 2s ease-in 0s 1 normal both;
+    -moz-animation: 2s ease-in 0s 1 normal both slidein1;
+    -webkit-animation: 2s ease-in 0s 1 normal both slidein1;
+    animation: 2s ease-in 0s 1 normal both slidein1;
     /*name duration timing-function delay iteration-count direction fill-mode;*/
   }
   
@@ -55,7 +55,6 @@
      width:100%;
    }
   }
-
 
   .slidein2 {
     position: absolute;
