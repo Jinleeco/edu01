@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menbest</title>
+</head>
+
+<!--css 시작-->
+<style>
+* {
+  margin:0;
+  padding:0;
+}
+
+area {
+  display:block;
+}
+
+.wrap {
+  max-width: 1920px;
+  position:relative;
+  width:100%;   
+}
+
+.topBanner{
+  position: relative;
+  width:80%;
+  height: 1152px;
+  overflow: hidden;
+  margin:0 auto;
+  background: url('./src/img/background.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.map{
+  position: relative;
+  width:80%;
+  margin:0 auto;
+}
+
+.responsive-img{width:100%}
+
+@media screen and (min-width: 1280px)  {
+  .topBanner{
+    height: 960px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px)  {
+  .topBanner{
+    height: 768px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px)  {
+  .topBanner{
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 639px)  {
+  .topBanner{
+    height: 375px;
+  }
+}
+
+
+.slidein1 {
+  position: absolute;
+  top:10px;
+  -moz-animation: 2s ease-in 0s 1 normal both slidein1;
+  -webkit-animation: 2s ease-in 0s 1 normal both slidein1;
+  animation: 2s ease-in 0s 1 normal both slidein1;
+  /*name duration timing-function delay iteration-count direction fill-mode;*/
+}
+
+@-moz-keyframes animation1 {
+  from {
+    margin-left:100%;
+    width:100%
+  }
+
+  to {
+    margin-left:80%;
+    width:100%;
+  }
+}
+
+@-webkit-keyframes animation1 {
+  from {
+    margin-left:100%;
+    width:100%
+  }
+
+  to {
+    margin-left:80%;
+    width:100%;
+  }
+}
+
+@keyframes slidein1 {
+  from {
+    margin-left:100%;
+    width:100%
+  }
+
+  to {
+    margin-left:80%;
+    width:100%;
+  }
+}
+
+.slidein2 {
+  position: absolute;
+  bottom:10px;
+  -moz-animation: slidein2 2s ease-in 0s 1 normal both;
+  -webkit-animation: slidein2 2s ease-in 0s 1 normal both;
+  animation: slidein2 2s ease-in 0s 1 normal both;
+  /*name duration timing-function delay iteration-count direction fill-mode;*/
+}
+
+@-moz-keyframes slidein2 {
+  from {
+    margin-left:0%;
+    width:100%
+  }
+
+  to {
+    margin-left:10%;
+    width:100%;
+  }
+}
+
+@-webkit-keyframes slidein2 {
+  from {
+    margin-left:0%;
+    width:100%
+  }
+
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
+
+@keyframes slidein2 {
+  from {
+    margin-left:0%;
+    width:100%
+  }
+
+  to {
+    margin-left:10%;
+    width:100%;
+  }
+}
+
+.slidein3 {
+  position:absolute;
+  width:fit-content;
+  height: 250px;
+  overflow: hidden;
+  bottom:50px;
+  right:0px;
+}
+
+.slidein3 img {
+  width:auto;    
+  animation: slidein3 2s ease-in 0s 1 normal both;
+  -moz-animation: slidein3 2s ease-in 0s 1 normal both;
+  -webkit-animation: slidein3 2s ease-in 0s 1 normal both;
+  /*name duration timing-function delay iteration-count direction fill-mode;*/
+}
+    
+@-moz-keyframes slidein3 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+@-webkit-keyframes slidein3 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+@keyframes slidein3 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+.slidein4 {
+  position:absolute;
+  display: inline-block;
+  height:250px;
+  overflow: hidden;
+  bottom:300px;
+  right:0px;
+}
+
+@-moz-keyframes slidein4 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+@-webkit-keyframes slidein4 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+@keyframes slidein4 {
+  from {
+    margin-top:150px;
+  }
+
+  to {
+    margin-top:0px;
+  }
+}
+
+.rotateY1{
+  width:fit-content;
+  animation: slidein4 1s ease-in 0s 1 normal both;
+  -moz-animation: slidein4 1s ease-in 0s 1 normal both;
+  -webkit-animation: slidein4 1s ease-in 0s 1 normal both;
+}
+
+.rotateY1 img{
+  width:auto;
+  height:194px; 
+}
+
+.rotateY1.active img {     
+  animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  -moz-animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  -webkit-animation: frontRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  /*name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@-moz-keyframes frontRotateX {
+  100% {
+      transform: rotateX(620deg);
+  }
+}
+
+@-webkit-keyframes frontRotateX {
+  100% {
+      transform: rotateX(620deg);
+  }
+}
+
+@keyframes frontRotateX {
+  100% {
+      transform: rotateX(620deg);
+  }
+}
+
+/* .rotateY2{
+  width: fit-content;
+  animation: slidein4 1s ease-in 0s 1 normal both;
+  -moz-animation: slidein4 1s ease-in 0s 1 normal both;
+  -webkit-animation: slidein4 1s ease-in 0s 1 normal both;
+}
+
+.rotateY2 img{ 
+  width:auto;
+  height:194px;  
+  animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  -moz-animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  -webkit-animation: backRotateX 1.2s 1.5s cubic-bezier(.4,0,0,1);
+  /*name duration timing-function delay iteration-count direction fill-mode;
+} 
+
+
+
+@-moz-keyframes backRotateX {
+  100% {
+      transform: rotateX(360deg)
+  }
+}
+
+@-webkit-keyframes backRotateX {
+  100% {
+      transform: rotateX(360deg)
+  }
+}
+
+@keyframes backRotateX {
+  100% {
+      transform: rotateX(360deg)
+  }
+}*/
+
+</style>
+<!--CSS 끝-->
+
+
+
+<body>
+    <div class="wrap">
+      <div class="topBanner">
+        <div class="slidein1">
+            <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_4/model_01.png" width="321px" alt="image1"/>
+        </div>
+        <div class="slidein2">
+            <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_4/model_02.png" width="837px" alt="image2"/>
+        </div>
+        <div class="slidein4">
+            <div class="rotateY1 active">
+                <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_4/text_03.png" alt="style text"/>
+             </div>
+              <!-- <div class="rotateY2">
+                  <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_4/text_03.png" alt="style text"/>
+              </div> -->
+        </div>
+        <div class="slidein3">
+            <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_4/text_04.png" alt="style text"/>
+        </div>
+      </div>
+      <div class="map">
+        <!--이미지맵 코드 시작 -->
+        <!--img태그의 usemap속성의 값은  map 태그와 name가 동일해야 합니다.-->
+        <!--usemap의 map이름 앞에 반드시 #을 붙여서 작성합니다. -->
+        <!-- Image Map Generated by http://www.image-map.net/ -->
+        <img src="./src/img/background.jpg" usemap="#image-map" class="responsive-img">
+      
+        <!--map태그의 name 속성의 값은 문서 내에서 중복되지 않고 유일해야합니다.-->
+        <!--map태그의 id 속성을 추가하다면 name의 이름과 동일하게 지정합니다.-->
+        <!-- Image Map Generated by http://www.image-map.net/ -->
+        <map name="image-map">
+            <area target="_blank" alt="naver로 이동" title="naver로 이동" href="http://www.naver.com" coords="543,1346,72,739" shape="rect">
+            <area target="_blank" alt="daum으로 이동" title="daum으로 이동" href="http://www.daum.net" coords="673,735,1221,1358" shape="rect">
+            <area target="_blank" alt="google로 이동" title="google로 이동" href="http://www.google.com" coords="1351,732,1834,1356" shape="rect">
+        </map>
+        <!--이미지맵 코드 끝 -->
+        
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+        $('img[usemap]').rwdImageMaps();
+    });
+  
+    const turnTextAnimation = document.querySelector(".slidein4 .rotateY1 img");
+    turnTextAnimation.addEventListener("animationend", (event) => {
+      var _this = event.target;
+      var _parent = _this.parentNode;
+
+      _parent.classList.remove("active");
+      setTimeout(() => {
+        _parent.classList.add("active");
+      },2000);
+      
+    });
+  </script>
+</body>
+</html>
