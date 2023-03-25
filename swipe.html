@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edu03</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+        * {
+          margin:0;
+          padding:0;
+        }
+        .wrap {
+          position:relative;
+          width:100%;
+          max-width:1600px;
+          min-width:768px;
+          height:auto;
+          background: #b590b1;
+          overflow: hidden;
+          margin: 0 auto;
+        }
+        .slide1 {
+            width:100%;
+            background-image: url('./src/img/color_bg_2.jpg');
+            background-size: 100% 100%;
+            text-align: center;
+        }
+        .slide2 {
+            width:100%;
+            background-image: url('./src/img/color_bg_1.jpg');
+            background-size: 100% 100%;
+            text-align: center;
+        }
+      </style>      
+</head>
+<body>
+    <div class="wrap">
+        <div class="swiper slide-wrap">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                    <img src="./src/img/image6.png" alt="image1"/>
+                </div>
+                <div class="swiper-slide slide2">
+                    <img src="src/img/image5.png" alt="image2"/>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="text">
+            <img src="src/img/image7.png" alt="text">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var swiper = new Swiper('.slide-wrap', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            });
+        });
+    </script>
+</body>
+</html>
