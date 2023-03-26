@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <title>supwe week</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<link rel="stylesheet" href="http://elcanto.speedgabia.com/publish/css/mobile_min.css" />
+	
+<style> 
+    .content{
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+        position: relative;
+        display: block;   
+    }
+    .main {
+        width: 100%;
+        max-width: 800px;
+		position: relative;
+    }
+
+    /*하단 이미지*/
+    section {
+        width: 100%;
+        max-width: 800px;
+        margin: -1%;
+        max-height: auto;
+		position: relative;
+        display: none;}
+		
+	.section .slidelist label {
+        position:absolute;
+        z-index:10;
+        top:50%;
+        transform:translateY(-10%);
+        padding:50px;
+        cursor:pointer;}
+
+     /*라벨이미지*/       
+    input {
+        width: 100%;
+        display: none;}
+
+    /*input 클릭시, label 스타일*/
+        input:checked + label {
+        border-bottom: 0px solid #000000;}     
+
+    label {
+        max-width: 30%;
+        width: 100%;
+        max-height: 100px;
+		position: relative;
+        height: 100%;
+        margin-bottom: 0px;
+        display: inline-block;}
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    #tab1:checked ~ #content1, /* tab1 라디오 버튼이 눌리면 checked=true가 된다. */
+    #tab2:checked ~ #content2, /* checked가 true인 라디오버튼을 ~ #content에 연결한다. */
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4 {
+        display: block; width: 100%; position: relative; 
+	}
+
+    .frontrow_con01 area {cursor: pointer;}
+
+    #frontrow_con01_800 {display: block;}
+    #frontrow_con01_700 {display: none;}
+    #frontrow_con01_600 {display: none;}
+    #frontrow_con01_500 {display: none;}
+    #frontrow_con01_400 {display: none;}
+    #frontrow_con01_300 {display: none;}
+
+    @media screen and (min-width: 750px) and (max-width: 800px)  {
+        #frontrow_con01_800 {display: block !important;}
+        #frontrow_con01_700 {display: none !important;}
+        #frontrow_con01_600 {display: none !important;}
+        #frontrow_con01_500 {display: none !important;}
+        #frontrow_con01_400 {display: none !important;}
+        #frontrow_con01_300 {display: none !important;}
+    }
+
+    @media screen and (min-width: 650px) and (max-width: 749px)  {
+        #frontrow_con01_800 {display: none !important;}
+        #frontrow_con01_700 {display: block !important;}
+        #frontrow_con01_600 {display: none !important;}
+        #frontrow_con01_500 {display: none !important;}
+        #frontrow_con01_400 {display: none !important;}
+        #frontrow_con01_300 {display: none !important;}
+    }
+
+    @media screen and (min-width: 550px) and (max-width: 649px)  {
+        #frontrow_con01_800 {display: none !important;}
+        #frontrow_con01_700 {display: none !important;}
+        #frontrow_con01_600 {display: block !important;}
+        #frontrow_con01_500 {display: none !important;}
+        #frontrow_con01_400 {display: none !important;}
+        #frontrow_con01_300 {display: none !important;}
+    }
+
+    @media screen and (min-width: 450px) and (max-width: 549px)  {
+        #frontrow_con01_800 {display: none !important;}
+        #frontrow_con01_700 {display: none !important;}
+        #frontrow_con01_600 {display: none !important;}
+        #frontrow_con01_500 {display: block !important;}
+        #frontrow_con01_400 {display: none !important;}
+        #frontrow_con01_300 {display: none !important;}
+    }
+
+    @media screen and (min-width: 350px) and (max-width: 449px)  {
+        #frontrow_con01_800 {display: none !important;}
+        #frontrow_con01_700 {display: none !important;}
+        #frontrow_con01_600 {display: none !important;}
+        #frontrow_con01_500 {display: none !important;}
+        #frontrow_con01_400 {display: block !important;}
+        #frontrow_con01_300 {display: none !important;}
+    }
+
+    @media screen and (max-width: 349px)  {
+        #frontrow_con01_800 {display: none !important;}
+        #frontrow_con01_700 {display: none !important;}
+        #frontrow_con01_600 {display: none !important;}
+        #frontrow_con01_500 {display: none !important;}
+        #frontrow_con01_400 {display: none !important;}
+        #frontrow_con01_300 {display: block !important;}
+    }
+
+</style>
+
+<center> <!-- 지원중단 -->
+
+ <!--메인이미지-->
+<div class="content">
+    <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_01.gif"  style="width: 100%; max-width: 800px; display: block;">
+</div>
+
+<!--슬라이드 이미지-->
+<div class="main" style="background-color: #f6f8ee;"> 
+    <input id="tab1" type="radio" name="tabs" checked> 
+    <label for="tab1">
+        <img src="./src/img/MO_superweek_700.jpg" style="width: 100%; display: block;">
+        <!--https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_02_01.jpg-->
+    </label>
+ 
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2">
+        <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_02_02.jpg" style="width: 100%; display: block;">
+    </label>
+
+    <input id="tab3" type="radio" name="tabs">
+    <label for="tab3">
+        <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_02_03.jpg" style="width: 100%; display: block;">
+    </label>
+	
+	
+  
+  
+    <section id="content1" style="top: -5px;">
+        <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_02.jpg" style="width: 100%; max-width: 800px; display: block;" class="img-responsive" usemap="#frontrow_con01"></a>
+    </section>
+
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_800">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="85,284,390,758" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="410,285,712,753" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.co.kr" coords="71,903,395,1389" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr/" coords="405,922,709,1393" shape="rect">
+    </map>
+	
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_700">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="74,250,343,661" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="359,249,625,659" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.co.kr" coords="69,802,338,1214" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr" coords="356,807,613,1218" shape="rect">
+    </map>
+
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_600">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="62,215,292,566" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="305,213,535,566" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.com" coords="42,684,295,1037" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr" coords="303,689,530,1043" shape="rect">
+    </map>
+	
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_500">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="50,177,243,470" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="252,175,450,475" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.co.kr" coords="36,568,246,870" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr" coords="255,580,446,873" shape="rect">
+    </map>
+
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_400">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="45,144,191,380" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="204,143,356,378" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.co.kr" coords="37,454,194,693" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr" coords="205,462,353,696" shape="rect">
+    </map>
+
+    <map name="frontrow_con01" class="frontrow_con01" id="frontrow_con01_300">
+        <area target="_blank" alt="naver" title="naver" href="http://www.naver.com" coords="32,107,145,282" shape="rect">
+        <area target="_blank" alt="daum" title="daum" href="http://www.daum.net" coords="154,107,267,283" shape="rect">
+        <area target="_blank" alt="google" title="google" href="http://www.google.co.kr" coords="31,348,145,523" shape="rect">
+        <area target="_blank" alt="elcanto" title="elcanto" href="https://www.elcanto.co.kr" coords="151,346,264,523" shape="rect">
+    </map>
+
+    <section id="content2" style="top: -5px;">
+        <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_03.jpg"  style="width: 100%; max-width: 800px; display: block;" class="img-responsive" usemap="#frontrow_con02"></a>
+		</section>
+    <map name="frontrow_con02">
+        <area shape="rect" alt="" title="" coords="50,175,240,473"  href="https://www.elcanto.co.kr/m/product.html?branduid=3361372&search=LCWD94I239&sort=&xcode=011&mcode=001&scode=003&GfDT=bm14W1w%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="260,175,444,474"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359983&search=LCWD31I226&sort=&xcode=011&mcode=001&scode=002&GfDT=a213UA%3D%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="49,577,233,865"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359803&search=LCMS74I14C&sort=&xcode=011&mcode=002&scode=003&GfDT=bm57W10%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="260,580,437,865"  href="https://www.elcanto.co.kr/m/product.html?branduid=3360032&search=LCMC82M211&sort=&xcode=011&mcode=002&scode=007&GfDT=aGp3UA%3D%3D"  target="_blank" />
+    </map>
+
+    <section id="content3"style="top: -5px;">
+        <img src="https://ai.esmplus.com/elcantomall/elcanto/EL_event/2303_02/MO_superweek_04.jpg"  style="width: 100%; max-width: 800px; display: block;" class="img-responsive" usemap="#frontrow_con03"></a>
+    </section>
+    <map name="frontrow_con03">
+        <area shape="rect" alt="" title="" coords="50,175,240,473"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359979&search=LCWC32M226&sort=&xcode=011&mcode=001&scode=003&GfDT=a2p3UA%3D%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="260,175,444,474"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359982&search=LCWC31M226&sort=&xcode=011&mcode=001&scode=003&GfDT=bm9%2BW10%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="49,577,233,865"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359274&search=LCMC41I126&sort=&xcode=011&mcode=002&scode=003&GfDT=bm5%2BW1w%3D"  target="_blank" />
+        <area shape="rect" alt="" title="" coords="260,580,437,865"  href="https://www.elcanto.co.kr/m/product.html?branduid=3359693&search=LCMS05B139&sort=&xcode=011&mcode=002&scode=003&GfDT=a2t3UA%3D%3D"  target="_blank" />
+    </map>
+
+
+</div>
+</center>
+
+
+
