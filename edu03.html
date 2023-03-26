@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <style>
         * {
-          margin:0;
-          padding:0;
+            margin:0;
+            padding:0;
         }
         .wrap {
-          position:relative;
-          width:100%;
-          max-width:1600px;
-          min-width:768px;
-          height:auto;
-          background: #b590b1;
-          overflow: hidden;
-          margin: 0 auto;
+            position:relative;
+            width:100%;
+            max-width:1600px;
+            min-width:768px;
+            height:auto;
+            background: #b590b1;
+            overflow: hidden;
+            margin: 0 auto;
         }
         .slide1 {
             position: relative;
@@ -38,70 +38,59 @@
             width: 100%;
         }
 
+        .swiper-slide .img { width: 80%; }
+
         .swiper-slide.slide1 .slidein{
             position: absolute;
             width: 50%;
             left: 25%;
-            bottom: 80px;
+            bottom: 0%;
+            opacity: 0;
         }
+
+        .animation1 {
+            -moz-animation: 2s ease-in 0s 1 normal both animation1;
+            -webkit-animation: 2s ease-in 0s 1 normal both animation1;
+            animation: 2s ease-in 0s 1 normal both animation1;
+        }
+        
 
         .swiper-slide.slide2 .slidein{
             position: absolute;
             width: 65%;
             left: 45%;
-            bottom: 80px;
-        }
-
-        .swiper-slide.slide1 .img{
-            position: relative;
-            width: 80%;
-            bottom: 50px;
+            bottom: 0%;
             opacity: 0;
         }
 
-        .swiper-slide.slide2 .img{
-            position: relative;
-            width: 80%;
-            bottom: 20px;
-            opacity: 0;
-        }
-
-        .swiper-slide .animation1{            
-            -moz-animation: 2s ease-in 0s 1 normal both animation1;
-            -webkit-animation: 2s ease-in 0s 1 normal both animation1;
-            animation: 2s ease-in 0s 1 normal both animation1;
-            /*name duration timing-function delay iteration-count direction fill-mode;*/
-        }
-
-        .swiper-slide .animation2{            
+        .animation2 {
             -moz-animation: 2s ease-in 0s 1 normal both animation2;
             -webkit-animation: 2s ease-in 0s 1 normal both animation2;
             animation: 2s ease-in 0s 1 normal both animation2;
-            /*name duration timing-function delay iteration-count direction fill-mode;*/
         }
-        
+
         @-moz-keyframes animation1 {
-            100% { bottom:80px; opacity: 1; }
+            100% { bottom:15%; opacity: 1; }
         }
         
         @-webkit-keyframes animation1 {
-            100% { bottom:80px; opacity: 1; }
+            100% { bottom:15%; opacity: 1; }
         }
         
         @keyframes animation1 {
-            100% { bottom:80px; opacity: 1; }
+            100% { bottom:15%; opacity: 1; }
         }
 
         @-moz-keyframes animation2 {
-            100% { bottom:50px; opacity: 1; }
+            100% { bottom:10%; opacity: 1; }
         }
         
         @-webkit-keyframes animation2 {
-            100% { bottom:50px; opacity: 1; }
+            100% { bottom:10%; opacity: 1; }
         }
         
         @keyframes animation2 {
-            100% { bottom:50px; opacity: 1; }
+            100% { bottom:10%; opacity: 1; }
         }
 
         .text {
@@ -110,6 +99,8 @@
 
         .text img {
             position: relative;
+            width:100%;
+            height:auto;
             bottom: -100px;            
             -moz-animation: 0.5s ease-in 0s 1 normal both text1;
             -webkit-animation: 0.5s ease-in 0s 1 normal both text1;
@@ -135,12 +126,12 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="swiper slide-wrap">
+        <div class="slide-wrap">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide1">
                     <img src="./src/img/color_bg_1.jpg" class="background" alt="background1"/>
-                    <div class="slidein">
-                        <img src="./src/img/image6.png" class="img animation1" alt="image1"/>
+                    <div class="slidein animation1">
+                        <img src="./src/img/image6.png" class="img" alt="image1"/>
                     </div>
                 </div>
                 <div class="swiper-slide slide2">
@@ -170,7 +161,7 @@
             });
             
             setTimeout(function(){
-                $(".slide2 .img").addClass("animation2");
+                $(".swiper-slide.slide2 .slidein").addClass("animation2");
             }, 2500);
         });
     </script>
