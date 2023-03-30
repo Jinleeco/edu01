@@ -64,12 +64,12 @@
 		}
 
     .wrap{
-        background-image:url('./src/img/sel/sel_01.jpg');
+        background-image: url('./src/img/sel/sel_01.jpg');
         background-repeat: repeat-y;
     }
 
     .title{
-        padding-top:11.1%;
+        margin-top:11.1%;
     }
 
     .sel-box {
@@ -79,22 +79,22 @@
     }
 
     .sel-box ul {
-        display: flex;
-        flex-wrap: wrap;
+        display: flex; /* 반응형 레이아웃 */
+        flex-wrap: wrap; /* 반응형 레이아웃 */
         justify-content: space-between;
         width:100%;
     }
 
     .sel-box ul li{
-        width:48%;
+        width:48%; /*2% 여백을 위해*/
     }
 
     .sel-box ul li:nth-child(3){
-        margin-top:30px;
+        margin-top:30px; /**/
     }
 
     .sel-box ul li:nth-child(4){
-        margin-top:50px;
+        margin-top:50px; /**/
     }
 
     .sel-box ul li a img {
@@ -128,7 +128,7 @@
 	  
   
     <section id="content1" style="top: -5px;">
-        <div class="wrap">
+        <div class="wrap" style="background-color: antiquewhite;">
             <div class="title"><img src="./src/img/sel/sel_02.jpg" width="100%"/></div>
             <div class="sel-box">
                 <ul>
