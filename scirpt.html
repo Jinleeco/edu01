@@ -5,18 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript">
-        // 검색창 여닫기
-        _headerWrap.find('.viewSearchBtn').on('click', function(e){
-            var _this = _(this);
-            e.preventDefault();
-            if(_this.hasClass('on') === true){
-                _this.removeClass('on');
+    <style>
+        /* CSS파일은 위에 위치합니다. : 디자인 */
+        #header{
+            background-color: bisque;
+        }
+        .viewSearchBtn {
+            border: 0px;
+            background-color: blueviolet;
+        } /* 버튼은 디자인을 css로 바꿀 수 있다. */
+
+        .viewSearchBtn.on { /*viewSearchBtn이면서 on을 가지고 있는 요소*/ 
+            background-color: brown;
+        }
+        .searchArea_layer {
+            display: block;
+            /*display:none;*/
+        }
+        .searchArea_layer.on {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        안녕하세요.<br/> <!-- <br/> 한줄 띄기(엔터)-->
+        <form action="./edu03.html">
+            <div class="searchArea_layer"><input type="text" name="searchText" class="MS_search_word" id="searchText" style="width:100%;"/></div>
+            <button type="button" class="viewSearchBtn">검색창 여닫기</button>
+            <!-- 클래스를 여러개 적용하려면 공백으로 구분하면 된다.-->
+        </form>
+
+        <!-- button type = button : 버튼의 역할만 한다. -->
+        <!-- button type = submit : 
+            버튼의 역할과 form태그 안에 있는 사용자에게서 입력받은
+            내용을 서버로 전송한다. -->
+    </div>
+    <!--Javascript 파일은 아래에 위치합니다. 1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 라이브러리를 먼저 다운로드 받습니다. 2 -->
+    <script type="text/javascript"> /* 동작 */
+        var _headerWrap = jQuery("#header"); /* 변수 선언 : jQuery = $, # : 아이디 선택자, . : 클래스 선택자 */
+        //alert(_headerWrap.text()); /* 경고창 띄우기 : #header 안에 있는 텍스트를 띄운다. */
+        // 검색창 여닫기 : 예상으로는 모바일에서 사용할 것 같습니다.
+        _headerWrap.find('.viewSearchBtn').on('click', function(e){ 
+            // 클래스 선택자 viewSearchBtn 요소를 클릭하면 이벤트가 발생한다.
+            //alert("클릭했습니다 !!!"); /* 경고창 띄우기 : 클릭이벤트 발생 확인 */
+            var _this = jQuery(this); /* $(this) 이벤트가 발생한 객체 : 클릭한 버튼 */
+            //alert(_this.text()); /* 경고창 띄우기 : 클릭한 버튼의 내용 */
+            
+            e.preventDefault();             
+            /*  기본동작을 막는다. 
+                submit버튼에 주로 쓰입니다. 
+                submit이란 form태그 안에 있는 button이 submit button일 경우
+                클릭하면 form내용이 서버로 전송이 된다. (페이지 이동이 일어납니다.)
+                서버로 전송하는 기본 이벤트를 막습니다.
+            */
+            if(_this.hasClass('on') === true){ // button이 on 클래스를 가진 경우
+                _this.removeClass('on'); // 닫기
                 _headerWrap.find('.searchArea_layer').removeClass('on');			
-            } else {
-                _this.addClass('on');
+                // find : 요소를 찾는다. # : 아이디 선택자, . : 클랙스 선택자
+            } else { // button이 on 클래스를 가지지 않는 경우
+                _this.addClass('on'); // 열기
                 _headerWrap.find('.searchArea_layer').addClass('on');
-                jQuery( '.search_top .search_this' ).appendTo( '.search_scroll' );
+                //jQuery( '.search_top .search_this' ).appendTo( '.search_scroll' );
             }
         });
 
@@ -24,23 +76,30 @@
             jQuery('.searchArea_layer, .searchArea_layer .searchArea').removeClass('on');		
         });
 
-        /* 검색어 기본값 처리
-        var initInputOpts = {
-            val : '검색어를 입력하세요. ex) 로퍼, 스니커즈',
-            target : _headerWrap.find('.searchArea .MS_search_word'),
-            valPosition : 'placeholder'
-        };
-        if(window.customClassList){// ie 하위 버전을 위한 값.	
-            initInputOpts.valPosition = 'value';
+        /* 검색어 기본값 처리 */
+        // var initInputOpts = {
+        //      val : '검색어를 입력하세요. ex) 로퍼, 스니커즈',
+        //      target : _headerWrap.find('.searchArea .MS_search_word'),
+        //      valPosition : 'placeholder'
+        // };
+        // if(window.customClassList){// ie 하위 버전을 위한 값.	
+        //      initInputOpts.valPosition = 'value';
+        // }
+        //PHPS.initInputValue(initInputOpts);
+        
+        var idx = 0;
+        function changePlaceholder(){
+            
+            var textList = ["로퍼", "플랫", "펌프스"];
+            jQuery(".MS_search_word").attr("placeholder", textList[idx]);
+            if(idx > (textList.length-1)){
+                idx = 0;
+            }else{
+                idx += 1;
+            }    
         }
-        PHPS.initInputValue(initInputOpts);
-        */
-
-
-        jQuery( '.MS_search_word' ).attr( 'placeholder', '검색어를 입력하세요. ex) 로퍼, 플랫, 펌프스' ); //MS_search_word 클래스명을 넣는다.
+        setInterval(changePlaceholder, 1000);// 일정시간마다 코드를 반복해서 실행한다. 1000ms = 1초
+        
     </script>
-</head>
-<body>
-    
 </body>
 </html>

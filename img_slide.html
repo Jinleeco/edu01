@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+
+.image-container {
+  display: flex;
+  width: 100%;
+  height: 836px;
+  overflow: hidden; /* 이미지를 컨테이너 안에서 숨기기 */
+}
+
+.image-container img {
+
+}
+
+.image-container .img1 {
+  width: 2000px;
+  height: 836px;
+  position: relative;
+  animation: slide 5s linear infinite; /* slide 애니메이션 적용 */
+}
+
+.image-container .img2 {
+  width: 2000px;
+  height: 836px;
+  position: relative;
+  animation: slide 5s linear infinite; /* slide 애니메이션 적용 */
+}
+
+/* slide 애니메이션 정의 */
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* 처음 위치 */
+  }
+  100% {
+    transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+  }
+}
+
+	</style>
+
+	<div class="image-container">
+ 		 <img class="img1" src="./src/img/your-image-file.jpg" alt="Your Image">
+ 		 <img class="img2" src="./src/img/your-image-file.jpg" alt="Your Image">
+	</div>
+
+</body>
+</html>

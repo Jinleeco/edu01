@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Time Elapsed</title>
+    <style>
+      html,body{height: 100%}
+      #timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        font-weight: bold;
+        height: 100%;
+      }
+      .time-colon{margin: 0 1.5rem}
+    </style>
+  </head>
+  <body>
+    <div id="timer"></div>
+    <script>
+      // 특정일을 선언합니다.
+      const targetDate = new Date("2023-03-21T00:00:00");
+
+      // 시간을 업데이트하는 함수를 정의합니다.
+      function updateTime() {
+        // 현재 시간을 구합니다.
+        const currentDate = new Date();
+        
+        // 경과된 시간을 계산합니다.
+        const elapsedSeconds = Math.floor((currentDate - targetDate) / 1000);
+        const elapsedHours = Math.floor(elapsedSeconds / 3600);
+        const elapsedMinutes = Math.floor((elapsedSeconds % 3600) / 60);
+        const elapsedSecondsRemainder = elapsedSeconds % 60;
+
+        // HTML 엘리먼트를 선택하고, 각 엘리먼트에 값을 할당합니다.
+        const timerElement = document.getElementById("timer");
+        timerElement.innerHTML = `
+          <span>${elapsedHours}</span>
+          <span class="time-colon">:</span>
+          <span>${elapsedMinutes}</span>
+          <span class="time-colon">:</span>
+          <span> ${elapsedSecondsRemainder}</span>
+        `;
+      }
+
+      // 1초마다 시간을 업데이트합니다.
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
