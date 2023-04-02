@@ -5,19 +5,39 @@
     <title>Time Elapsed</title>
     <style>
       html,body{height: 100%}
-      #timer {
+      .red { color:red; }
+    #timer1 { /* 아이디 선택자 
+        : 전체 화면 중에서 한 페이지에 id는 1개밖에 못 쓴다.*/
+        /* 클래스 선택자 : 여러번 반복해서 사용할 수 있다. */
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; /* 가로 중간 */
+        align-items: center; /* 세로 중간 */
+        font-size: 3rem; /* 배수 */
+        font-weight: bold;
+        height: 100%;
+      }  
+
+      #timer2 { /* 아이디 선택자 
+        : 전체 화면 중에서 한 페이지에 id는 1개밖에 못 쓴다.*/
+        /* 클래스 선택자 : 여러번 반복해서 사용할 수 있다. */
+        display: flex;
+        /*justify-content: center;  가로 중간 */
+        /*align-items: center;  세로 중간 */
         font-size: 3rem;
         font-weight: bold;
         height: 100%;
       }
-      .time-colon{margin: 0 1.5rem}
+      .time-colon{margin: 0 1.5rem} /* 위,아래 / 좌,우 */ /* margin-top, margin-bottom, margin-left, margin-right*/
+      /*{ margin : 1 2 3 4 } 위 오 아 왼*/
     </style>
   </head>
   <body>
-    <div id="timer"></div>
+    <div>
+      <img/>
+      <div id="timer1" class="red"></div>
+      <img/>
+    </div>
+    <div id="timer2" class="red"></div>
     <script>
       // 특정일을 선언합니다.
       const targetDate = new Date("2023-03-21T00:00:00");
@@ -34,8 +54,17 @@
         const elapsedSecondsRemainder = elapsedSeconds % 60;
 
         // HTML 엘리먼트를 선택하고, 각 엘리먼트에 값을 할당합니다.
-        const timerElement = document.getElementById("timer");
-        timerElement.innerHTML = `
+        const timerElement1 = document.getElementById("timer1");
+        const timerElement2 = document.getElementById("timer2");
+        timerElement1.innerHTML = `
+          <span>${elapsedHours}</span>
+          <span class="time-colon">:</span>
+          <span>${elapsedMinutes}</span>
+          <span class="time-colon">:</span>
+          <span> ${elapsedSecondsRemainder}</span>
+        `;
+
+        timerElement2.innerHTML = `
           <span>${elapsedHours}</span>
           <span class="time-colon">:</span>
           <span>${elapsedMinutes}</span>
