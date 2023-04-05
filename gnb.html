@@ -14,6 +14,14 @@
         html, body{
             height:100%;
         }
+
+        @font-face {
+            font-family: 'CustomFont'; /* 폰트 이름을 정합니다. */
+            src: url('./src/font/NanumMyeongjo-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         .wrap {
             background-color: bisque;
             width:100%;
@@ -27,19 +35,20 @@
             width:80%;
         }
         .gnb ul{
-            display: flex;
+            display: flex; /* li를 일정한 간격으로 조정하는 css */
             width:100%;       
         }
         .gnb li{
-            display: flex;         
-            justify-content: center;
-            align-items: center; 
-            width:25%;
+            display: flex;         /* li 내 텍스트 정렬을 위하여 작성한 css */
+            justify-content: center; /* 가로중간 */
+            align-items: center; /* 세로중간 */
+            width:33.3%; /* 전체에 li 하나가 차지하는 영역 %로 나타냄 */
             height:3vw;
-            list-style: none;
+            list-style: none; /* · 이 붙는 기본 스타일을 없앤다. */
             font-size: 1vw;
-            color:beige;
-            border:1px solid #fdf5dc;
+            font-family: 'CustomFont'; /* 다운로드 받은 폰트 적용 */
+            color:beige; /* 폰트 칼라 */
+            border:1px solid #fdf5dc; /* 선 1px 두께의 선, solid 모양 (dots : 점선), 색깔*/
             background-color: black;
         }
         .slide-wrap {
@@ -52,22 +61,22 @@
             width:40%;
             justify-content: center;
         }
-        a {
-            text-decoration: none;
-            color: #000;
+        a { /* 태그 선택자 */
+            text-decoration: none; /* 하이퍼링크 태그인 a 태그는 기본적으로 밑줄이 쳐진다. 밑줄을 없애기 위함 */
+            color: #000; /* a태그는 기본 색상이 파란색 폰트색상을 검정으로 바꿔줌 */
         }
-        a.btn_menu {
-            padding:1vw 1.5vw;
+        a.btn_menu { /* a태그이면서 btn_menu라는 클래스를 갖고 있을 경우 */
+            padding:1vw 1.5vw; /*글자가 지닌 안쪽영역을 위,아래 / 좌,우 비율만큼 늘려준다.*/
             background-color: darkseagreen;
             border:1px solid #fdf5dc;
             font-size: 1.5vw;
-            font-family: Arial, Helvetica, sans-serif;
-            position:absolute;
-            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif; /* 폰트 이름 */
+            position:absolute; /* 영역을 띄워서 고정시키위해. 부모 영역에 종속됨 */
+            cursor: pointer; /* 마우스가 올라가면 손가락 모양으로 바뀐다. */
         }
         .menu1 {
             top:10%;
-            right:30%;
+            right:30%; /* btn_menu 클래스에 대한 absolute 위치를 정해준다. */
         }
         .menu2 {
             top:30%;
@@ -90,6 +99,13 @@
         .coupon img, .main-visual img{
             width:100%;
         }
+        .video {
+            width:100%;
+            margin: 0 auto;
+        }
+        .video video {
+            width:80%;
+        }
     </style>
 </head>
 <body>
@@ -103,14 +119,18 @@
                     <li>COUPON</li>
                     <li>CLASSIC CONTEMPRARY</li>
                     <li>ROMANTIC CHIC</li>
-                    <li>TRENDY Y2K</li>
+                    <!-- <li>TRENDY Y2K</li>
+                    <li>TRENDY Y2K222</li>
+                    <li>TRENDY Y2K333</li> -->
                 </ul>
             </div>
             <div class="swiper slide-wrap">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="./src/img/image6.png" alt="image1"/>
-                        <a href="http://www.naver.com" target="_blank" class="btn_menu menu1">메뉴1</a>
+                        <a href="#coupon" class="btn_menu menu1">메뉴1</a>
+                        <!-- . 클래스선택자, # 아이디선택자 -->
+                        <!-- a 태그 : 링크된 곳으로 이동하는 태그 : href 링크주소, target 새창 _blank 또는 자기자신창 _self -->
                         <a href="http://www.daum.net" target="_blank" class="btn_menu menu2">메뉴2</a>
                         <a href="http://www.google.com" target="_blank" class="btn_menu menu3">메뉴3</a>
                     </div>
@@ -121,15 +141,20 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-            <div class="coupon">
+            <div class="coupon" id="coupon">
                 <img src="./src/img/pc_cou_1.jpg"/>
+            </div>
+            <div class="video">
+                <video autoplay muted controls>
+                    <source src="./src/video/700_F_220551955_Di7OzOtrV080RH7WJj4nj6NrTC6qPAdT_ST.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function(){ /* DOM 요소가 불러와진 뒤에 실행이 됩니다. HTML 마크업 요소 div, ul, li */
             var swiper = new Swiper('.slide-wrap', {
             // Optional parameters
             direction: 'horizontal',
@@ -138,17 +163,18 @@
             scrollbar: false
             });
 
-            var gnbTop = $(".gnb").offset().top;
-            $(window).on("scroll", function(){
-                var scrollTop = $(window).scrollTop();
-                if(gnbTop <= scrollTop){
+            var gnbTop = $(".gnb").offset().top; /* var(변수선언) 전역변수 : $(".") 클래스로 선택합니다.
+                                                    offset().top -> gnb 클래스 요소의 top 위치를 반환합니다. */
+            $(window).on("scroll", function(){ /* scroll했을 때 실행이 된다. */
+                var scrollTop = $(window).scrollTop(); /* 사용자가 스크롤을 움직였을 때 스크롤의 top 위치 */
+                if(gnbTop <= scrollTop){ /* 조건문 : () 안이 true일 경우 실행 */
                     $(".gnb").css("width","80%");
-                    $(".gnb").css("position","fixed");
+                    $(".gnb").css("position","fixed"); /* 위치 고정 */
                     $(".gnb").css("top", 0);
-                    $(".gnb").css("z-index", 9999);
-                }else{
+                    $(".gnb").css("z-index", 9999); /* 이미지가 겹쳐있을 때 z-index가 클수록 위로 올라온다. */
+                }else{ /* 조건문 : () 안이 false일 경우 실행 */
                     $(".gnb").css("width","100%");
-                    $(".gnb").css("position", "static");
+                    $(".gnb").css("position", "static"); /* 원래 자리에 정적으로 있도록 */
                     $(".gnb").css("z-index", 0);
                 }
             });
