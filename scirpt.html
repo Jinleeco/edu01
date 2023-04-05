@@ -31,7 +31,7 @@
     <div id="header">
         안녕하세요.<br/> <!-- <br/> 한줄 띄기(엔터)-->
         <form action="./edu03.html">
-            <div class="searchArea_layer"><input type="text" name="searchText" class="MS_search_word" id="searchText" style="width:100%;"/></div>
+            <div class="searchArea_layer"><input type="text" name="searchText" class="MS_search_word" id="searchText" style="width:100%;" placeholder="test"/></div>
             <button type="button" class="viewSearchBtn">검색창 여닫기</button>
             <!-- 클래스를 여러개 적용하려면 공백으로 구분하면 된다.-->
         </form>
@@ -87,10 +87,10 @@
         // }
         //PHPS.initInputValue(initInputOpts);
         
-        var idx = 0;
+        var idx = 0; //전역 변수 : 자바스크립트의 모든 위치에서 갖다 쓸 수 있는 변수
         function changePlaceholder(){
-            
-            var textList = ["로퍼", "플랫", "펌프스"];
+            //지역 변수 : 자바스크립트의 선언한 함수 내에서만 사용할 수 있는 변수
+            var textList = ["로퍼", "플랫", "펌프스"]; //배열: index 0부터 시작
             jQuery(".MS_search_word").attr("placeholder", textList[idx]);
             if(idx > (textList.length-1)){
                 idx = 0;

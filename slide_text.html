@@ -17,25 +17,22 @@
             height: 100px;
         }
         .text-wrap{
-            display: flex;
-            background-color: #000000;
-            color: #ffffff;
-            width: 100%;
-            height: 60px;
-            overflow: hidden;
+            display: flex; /* 따로 떨어진 이미지 2개를 한줄로 합친다. */
+            width: 100%; /* 반응형 */
+            overflow: hidden; /* 넘치면 안보이게 한다. */
         }
-        .text-wrap .img1 {
+        .text-wrap .img1 { /* . : 클래스 선택자, # : 아이디 선택자 */
             width: 2000px;
             height: 60px;
             position: relative;
-            animation: slidetext 20s linear infinite; /* slide 애니메이션 적용 */
+            animation: slidetext 5s linear infinite; /* slide 애니메이션 적용 */
         }
 
         .text-wrap .img2 {
             width: 2000px;
             height: 60px;
             position: relative;
-            animation: slidetext 20s linear infinite; /* slide 애니메이션 적용 */
+            animation: slidetext 5s linear infinite; /* slide 애니메이션 적용 */
         }
 
         @keyframes slidetext {
