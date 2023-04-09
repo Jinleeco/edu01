@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            height:100%;
+            min-width: 1200px;
+        }
+        .wrap {
+            background-color: bisque;
+            width:100%;
+            min-height:100%;
+            position:relative;
+            box-sizing: border-box;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            background-color: lightcoral;
+            overflow: hidden;
+        }
+        .img_area {
+            position: relative;
+            width:80%;
+            margin: 0 auto;
+        }
+        .img_area .imgA1{
+            position: absolute;
+            right:0;
+            z-index: 1;
+        }
+        .img_area .imgBag{
+            position: absolute;
+            
+        }
+        .img_area .imgBag .img1{
+            position: absolute;
+            top:10vw;
+            left:0;
+            z-index:5;            
+        }
+        .img_area .imgA2{
+            width:100%;
+            position: absolute;
+        }
+        .img_area .imgA2 .img1{
+            position: absolute;
+            top:10vw;
+            left:0;
+            z-index: 2;
+        }
+        .img_area .imgA2 .img2{
+            position: absolute;
+            top:2vw;
+            right:0;
+            z-index: 3;
+        }
+        .img_area .img_bg{
+            position: relative;
+            width:100%;
+            text-align: center;
+            z-index: 0;
+        }
+        .img_bubble{
+            position:absolute;
+        }
+        .img_bubble .img1{
+            position: absolute;
+            top:8vw;
+            left:0;
+        }
+
+        @keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+
+        @-webkit-keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+        
+        @-moz-keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+        .text-wrap{
+            display: flex; /* 따로 떨어진 이미지 2개를 한줄로 합친다. */
+            width: 100%; /* 반응형 */
+            overflow: hidden; /* 넘치면 안보이게 한다. */
+        }
+        .text-wrap .img1 { /* . : 클래스 선택자, # : 아이디 선택자 */
+            width: 2000px;
+            height: 60px;
+            position: relative;
+            animation: slidetext 5s linear infinite; /* slide 애니메이션 적용 */
+        }
+
+        .text-wrap .img2 {
+            width: 2000px;
+            height: 60px;
+            position: relative;
+            animation: slidetext 5s linear infinite; /* slide 애니메이션 적용 */
+        }
+
+        @keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+
+        @-webkit-keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+        
+        @-moz-keyframes slidetext {
+            0% {
+                transform: translateX(0); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-2000px); /* 왼쪽으로 2000px 이동 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="img_area">                
+                <div class="imgBag">
+                    <img src="./src/img/w-main-obj-02.png" class="img1"/>
+                </div>
+                <div class="imgA2">
+                    <img src="./src/img/w-main-obj-01.png" class="img1"/>
+                    <img src="./src/img/w-main-obj-01.png" class="img2"/>
+                </div>
+                <div class="imgA1">
+                    <img src="./src/img/w-main-obj-05.png"/>
+                </div>
+                <div class="img_bubble">
+                    <img src="./src/img/w-main-bubble-04.png" class="img1"/>
+                </div>
+                <div class="img_bg">
+                    <img src="./src/img/w-main-01.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="text-wrap">
+            <img src="./src/img/text.jpg" class="img1"/>
+            <img src="./src/img/text.jpg" class="img2"/>
+        </div>
+    </div>
+</body>
+</html>
